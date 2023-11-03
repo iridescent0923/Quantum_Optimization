@@ -1,0 +1,29 @@
+** Main goal 
+: [Gamma_ps = 8e-1 & tau = 5e-2] => Maximize CFI as flat and investigate parameters theta_x, phi_z
+
+** Method
+: Try all possible optimizer 
+
+- L-BFGS-B: with jacobian provided
+
+- SLSQP: with jacobian provided
+
+- trust-constr: with jacobian, hess provided
+
+** Procedure
+
+Step1: Begin with L-BFGS-B using constraints: [-inf, inf]
+=> Find breakaway point, peak to peak...
+
+Step2: Predict the shape of phi_z
+=> Check if the CFI is Full and flat for all PHI
+
+Step3: Adjust initial_value
+=> Reduce the noise before ~pi/2 point
+
+Step4: Adjust the range of pi/2 ~ N
+=> Find optimal N
+
+Step5: Strice tolerance
+
+Step6: Try SLSQP, trust-constr
