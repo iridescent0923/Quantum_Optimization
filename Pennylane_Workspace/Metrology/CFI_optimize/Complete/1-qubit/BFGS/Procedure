@@ -1,0 +1,20 @@
+Step_1: Begin with BFGS or trust-constr with (-inf, inf) constraints
+
+
+Step_2: Find breakaway point and appropriate constraints 
+
+
+Step_3: Apply constraints and adjust initial value.
+** Before pi/2 + N
+Paras_init[:2] = (1.3*pnp.pi)/2
+=> Find optimal value: usually below the value of PHI = 0
+
+** pi/2 + N ~ (2.1 + N): Hold off 
+elif (pnp.pi/2 + N <= phi_current <= (2.1) + N):   
+=> Adjust (2.1 + N) fits to result
+
+
+step_4: Adjust tol with jacobian and hess matrix provided 
+** BFGS = ftol & tol; with jacobian 
+
+** trust-constr = ftol only with jacobian and hess matrix provided
