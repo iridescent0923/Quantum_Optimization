@@ -86,12 +86,12 @@ def lbfgsb(cost_function_in, paras_in, constraints_in, gradient_in):
         fun = cost_function_in, 
         x0 = paras_in, 
         method = 'L-BFGS-B', 
-        bounds = constraints_in,
+        bounds = [(-float('inf'), float('inf'))] * 3,
         jac = gradient_in,
-        tol = 1e-12,
+        tol = 1e-20,
         options={
-            'ftol': 1e-12, 
-            'gtol': 1e-12
+            'ftol': 1e-20, 
+            'gtol': 1e-20
         }
     )
     return opt_result
