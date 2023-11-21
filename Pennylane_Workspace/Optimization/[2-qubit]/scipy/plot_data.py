@@ -19,8 +19,8 @@ class Index(Enum):
     THETA_X = 2
     PHI_Z = 3
     
-    TAU_1 = 3
-    TAU_2 = 4
+    TAU_1 = 4
+    TAU_2 = 5
 
 def plot_result(result_data, tau_dephase, gamma_ps_select, object):
     """
@@ -39,22 +39,7 @@ def plot_result(result_data, tau_dephase, gamma_ps_select, object):
     For 'tau_1' and 'tau_2', it plots these tau parameters over time.
     Each plot includes data for all tau dephasing rates, each represented as a separate line in the plot.
     """
-    if object == 'CFI_PS':
-        for tau_idx, tau_current in enumerate(tau_dephase):
-            plt.plot(
-                result_data[tau_idx][:,Index.PHI.value], 
-                result_data[tau_idx][:,Index.CFI.value], 
-                label = f'$\\tau$ = {tau_current}'
-            )
-
-        plt.title(f'CFI at $\gamma_{{ps}} = {gamma_ps_select}$')
-        plt.xlabel('Time')
-        plt.ylabel('CFI')
-        plt.grid()
-        plt.legend()
-        plt.show()
-    
-    elif object == 'CFI':
+    if object == 'CFI':
         for tau_idx, tau_current in enumerate(tau_dephase):
             plt.plot(
                 result_data[tau_idx][:,Index.PHI.value], 
