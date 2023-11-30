@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/dongukkim/Desktop/Quantum_Workspace/Pennylane_Workspace/Optimization/[3-qubit]/[2nd_hamiltonian]/[ps=0.8]/[line_search_step_1e-2]/[export]/torch_[0.1].py", line 330, in <module>
+    main()
+  File "/Users/dongukkim/Desktop/Quantum_Workspace/Pennylane_Workspace/Optimization/[3-qubit]/[2nd_hamiltonian]/[ps=0.8]/[line_search_step_1e-2]/[export]/torch_[0.1].py", line 319, in main
+    res = optimization_by_tau(sweep_range, init_par, tau_dephase, gamma_ps, 'LBFGS')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dongukkim/Desktop/Quantum_Workspace/Pennylane_Workspace/Optimization/[3-qubit]/[2nd_hamiltonian]/[ps=0.8]/[line_search_step_1e-2]/[export]/torch_[0.1].py", line 297, in optimization_by_tau
+    temp = torch_optimization(sweep_range, init_par, method).detach().cpu().numpy()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dongukkim/Desktop/Quantum_Workspace/Pennylane_Workspace/Optimization/[3-qubit]/[2nd_hamiltonian]/[ps=0.8]/[line_search_step_1e-2]/[export]/torch_[0.1].py", line 246, in torch_optimization
+    f_logs = [cost_function(params_tensor).item()]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dongukkim/Desktop/Quantum_Workspace/Pennylane_Workspace/Optimization/[3-qubit]/[2nd_hamiltonian]/[ps=0.8]/[line_search_step_1e-2]/[export]/torch_[0.1].py", line 172, in cost_function
+    CFI = qml.qinfo.classical_fisher(Post_selection)(Phi_global)
+                                                     ^^^^^^^^^^
+NameError: name 'Phi_global' is not defined. Did you mean: 'Tau_global'?
