@@ -105,8 +105,8 @@ $$\rho_{ps} = \frac{(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})}{Tr[(K
 #### [3-qubit]
 $$\rho_{ps} = \frac{(K \otimes(K \otimes K)) \rho (K \otimes(K \otimes K))^{\dagger}} % (K^{\dagger} \otimes I ^{\dagger})}
 
-{Tr[(K \otimes(K \otimes K)) \rho (K \otimes(K \otimes K))^{\dagger}]}
-$$
+{Tr[(K \otimes(K \otimes K)) \rho (K \otimes(K \otimes K))^{\dagger}]}$$
+
 #### [4-qubit]
 $$\rho_{ps} = \frac
 {(K \otimes K_3) \rho (K \otimes K_3)^{\dagger}}
