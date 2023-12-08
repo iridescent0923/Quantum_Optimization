@@ -8,16 +8,12 @@ The function Dephase_factor(tau) is designed to calculate the dephasing factor
 
 
 ### Time-evolution and Dephasing Density Matrix
-$Let, e^{-t/T_2} = e^{-\tau}$
+$$Let, e^{-t/T_2} = e^{-\tau}$$
 Here, t is the actual time, and T2 is the dephasing time constant. The term τ represents the normalized dephasing time.
 
 The effect of dephasing on a single qubit in the computational basis, considering a phase ϕ, can be described by the following density matrix:
 
-$\frac{1}{2} 
-\begin{bmatrix}
-1 & e^{(i\phi - \tau)} \\
-e^{(-i\phi - \tau)} & 1
-\end{bmatrix}$
+$$\frac{1}{2} \begin{bmatrix}1 & e^{(i\phi - \tau)} \\e^{(-i\phi - \tau)} & 1\end{bmatrix}$$
 
 ### Time-evolution with Phase Damping
 Phase damping, as implemented in PennyLane, can be described by a similar density matrix:
