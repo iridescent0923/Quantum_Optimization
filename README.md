@@ -29,7 +29,7 @@ $$where,Z = \begin{pmatrix}
 0 & -1 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
-$$H_{1} = -0.5 \cdot Z_0 - 0.5 \cdot Z_1 $$
+$$H_{1} = -0.5 \cdot (Z_0 + Z_1) $$
 
 $$= -0.5 \cdot (Z \otimes I) - 0.5 \cdot (I \otimes Z)$$
 
@@ -38,8 +38,50 @@ $$where,
 Z = \begin{pmatrix} 
 1 & 0 \\ 
 0 & -1 \end{pmatrix}$$
+
 #### [3-qubit]
+#### Entangler Hamiltonian
+$$H = -0.5 \, Z_0 \otimes Z_1 \otimes I_{2} 
+-0.5 \, I_{0} \otimes Z_1 \otimes Z_2$$
+
+$$where,
+Z = \begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 \end{pmatrix}$$
+
+#### Phase Accumulator Hamiltonian
+$$H_{1} = -0.5 \cdot Z_0 - 0.5 \cdot Z_1 - 0.5 \cdot Z_2 $$
+
+$$where, Z = \begin{pmatrix} 
+1 & 0 \\
+0 & -1 \end{pmatrix}$$
+
 #### [4-qubit]
+#### Entangler Hamiltonian
+$$H = -0.5 \cdot (
+ \, Z_0 \otimes Z_1 \otimes I_{2} \otimes I_3
+ + \, Z_{0} \otimes I_1 \otimes Z_{2} \otimes I_3
+ + \, Z_{0} \otimes I_1 \otimes I_{2} \otimes Z_3\\
+ + \, I_{0} \otimes Z_1 \otimes Z_{2} \otimes I_{3} 
+ + \, I_{0} \otimes Z_1 \otimes I_{2} \otimes Z_3
+ + \, I_{0} \otimes I_1 \otimes Z_{2} \otimes Z_3 
+)$$
+
+$$where, Z = \begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 
+\end{pmatrix}$$
+
+#### Phase Accumulator Hamiltonian
+$$H_{1} = -0.5 \cdot (
+    Z_0 + Z_1 + Z_2 + Z_3
+) $$
+
+$$where, Z = \begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 \end{pmatrix}$$
+
+
 ##### Parameters:
 - `coeffs`: A list of coefficients for each term in the Hamiltonian.
 
