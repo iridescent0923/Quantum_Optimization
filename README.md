@@ -1,4 +1,4 @@
-# Quantum_Optimization Work-Space
+# Quantum_Optimization WorkSpace
 
 ### Dephasing Factor Calculation
 The function Dephase_factor(tau) is designed to calculate the dephasing factor
@@ -51,6 +51,7 @@ https://docs.pennylane.ai/en/stable/code/api/pennylane.PhaseDamping.html
 - `interface='torch'`: This setting ensures that the QNode is compatible with PyTorch, allowing for automatic differentiation.
 - `diff_method='backprop'`: Specifies that backpropagation is used for computing gradients within the PyTorch framework.
 
+
 ### Post-selection for Single-qubit Circuit 
 The `Post_selection(phi)` function encapsulates the process of post-selection within a quantum circuit.
 
@@ -73,6 +74,7 @@ $$K = \begin{bmatrix}
 
 $$\rho_{\text{ps}} = \frac{K \rho K^\dagger}{\text{Tr}{[K \rho K^\dagger]}}$$
 
+
 ### Cost-function to Maximize
 The function cost_function(paras) is specifically designed to compute the Classical Fisher Information (CFI) with respect to a set of parameters. The CFI is an important quantity in quantum parameter estimation and is given by the formula:
 
@@ -88,6 +90,7 @@ https://docs.pennylane.ai/en/latest/code/api/pennylane.qinfo.transforms.classica
 
 #### (-) sign
 The purpose is to amplify the CFI, thereby enhancing the precision of parameter estimation. Given that PyTorch optimizers inherently minimize cost functions, the CFI's sign is inverted in the return statement of our cost_function.
+
 
 ### `torch_optimization`
 
@@ -117,6 +120,7 @@ The function generates a 2-dimensional torch tensor Data to store the results:
 3. For each value of ϕ in Phi, the function performs the optimization using the provided method, updating the global variable `Phi_global`.
 
 4. The optimized parameters and corresponding cost function values are recorded in Data.
+
 
 ### `select_optimizer`
 
