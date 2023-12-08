@@ -1,5 +1,29 @@
 # Quantum_Optimization WorkSpace
 
+
+### PennyLane Settings
+To begin, we configure PennyLane to use a specific quantum device. In this case, we are using PennyLane's default mixed-state simulator.
+
+##### Parameters:
+- `default.mixed`: The 'default.mixed' device is capable of simulating quantum states that are mixed
+
+- `wires=1`: Defines the number of qubits
+
+### Hamiltonian Definition
+$$H = -0.5 \sigma_z$$
+
+$$where,
+\sigma_z = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}$$
+
+##### Parameters:
+- `coeffs`: A list of coefficients for each term in the Hamiltonian.
+
+- `observables`: A list of quantum observables that constitute the Hamiltonian. 
+
+
 ### Dephasing Factor Calculation
 The function Dephase_factor(tau) is designed to calculate the dephasing factor
 
