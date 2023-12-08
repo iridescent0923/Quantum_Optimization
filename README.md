@@ -22,13 +22,11 @@ e^{(-i\phi - \tau)} & 1
 ### Time-evolution with Phase Damping
 Phase damping, as implemented in PennyLane, can be described by a similar density matrix:
 
-$\frac{1}{2} 
-
+$$\frac{1}{2} 
 \begin{bmatrix}
 1 & e^{i\phi} \sqrt{1 - \gamma} \\
 e^{-i\phi} \sqrt{1 - \gamma} & 1
-
-\end{bmatrix}$
+\end{bmatrix}$$
 
 
 ### Relating Dephasing and Phase Damping Parameters
@@ -39,7 +37,7 @@ This equation provides a direct way to calculate the phase damping parameter γ 
 τ. We can directly use this value as an argument for the phase damping channel in PennyLane.
 
 Furthermore,
-$$ e^{-\tau} = \sqrt{1 - \gamma}$$
+$$e^{-\tau} = \sqrt{1 - \gamma}$$
 
 ### Usage in PennyLane
 For more information on PennyLane's implementation of the phase damping channel, you can refer to the documentation at:
