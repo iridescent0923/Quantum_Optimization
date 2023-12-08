@@ -72,3 +72,19 @@ $$K = \begin{bmatrix}
 ρ_ps
 
 $$\rho_{\text{ps}} = \frac{K \rho K^\dagger}{\text{Tr}{[K \rho K^\dagger]}}$$
+
+### Cost-function to Maximize
+The function cost_function(paras) is specifically designed to compute the Classical Fisher Information (CFI) with respect to a set of parameters. The CFI is an important quantity in quantum parameter estimation and is given by the formula:
+
+$$\text{CFI}(\theta) = \sum_{x} \frac{1}{P(x|\theta)} \left( \frac{\partial P(x|\theta)}{\partial \theta} \right)^2$$
+
+#### `qml.qinfo.classical_fisher`
+The function `qml.qinfo.classical_fisher` within the PennyLane library computes the CFI for the supplied parameters. By invoking this function with a quantum circuit's parameters, it yields a matrix whose size is proportional to the number of parameters involved. However, in our specific application, we focus on the time-evolution parameter `phi_global` instead of local variables. This strategic choice is driven by the goal to assess the CFI with respect to time-evolution only.
+
+Using global variables like `phi_global` allows us to selectively compute the CFI for this singular, crucial parameter, bypassing the necessity to evaluate a potentially large parameter space. This approach streamlines the computation, focusing our resources and optimization efforts on the time-evolution aspect.
+
+To gain a deeper understanding of how `qml.qinfo.classical_fisher` is implemented and its functionalities, you can refer to the official PennyLane documentation at:
+https://docs.pennylane.ai/en/latest/code/api/pennylane.qinfo.transforms.classical\_fisher.html
+
+#### (-) sign
+The purpose is to amplify the CFI, thereby enhancing the precision of parameter estimation. Given that PyTorch optimizers inherently minimize cost functions, the CFI's sign is inverted in the return statement of our cost_function.
