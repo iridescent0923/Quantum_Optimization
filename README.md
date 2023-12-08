@@ -14,8 +14,10 @@ Here, t is the actual time, and T2 is the dephasing time constant. The term τ r
 The effect of dephasing on a single qubit in the computational basis, considering a phase ϕ, can be described by the following density matrix:
 
 $$\frac{1}{2} 
-\begin{bmatrix} 1 & e^{(i\phi - \tau)} \\ 
-e^{(-i\phi - \tau)} & 1\end{bmatrix}$$
+\begin{bmatrix} 
+1 & e^{(i\phi - \tau)} \\ 
+e^{(-i\phi - \tau)} & 1
+\end{bmatrix}$$
 
 ### Time-evolution with Phase Damping
 Phase damping, as implemented in PennyLane, can be described by a similar density matrix:
