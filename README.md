@@ -88,3 +88,50 @@ https://docs.pennylane.ai/en/latest/code/api/pennylane.qinfo.transforms.classica
 
 #### (-) sign
 The purpose is to amplify the CFI, thereby enhancing the precision of parameter estimation. Given that PyTorch optimizers inherently minimize cost functions, the CFI's sign is inverted in the return statement of our cost_function.
+
+### `torch_optimization`
+
+#### Purpose
+The `torch_optimization` function performs optimization over a range of Phi values using the specified optimization method ('LBFGS' or 'Adam'). The function iteratively optimizes the quantum gate parameters, aiming to minimize a predefined cost function.
+
+#### Arguments
+
+- `sweep_range` (list): A list specifying the start, end, and step values to generate a range of ϕ values for optimization.
+- `initial_parameters` (torch.Tensor): A tensor containing the initial guess for the parameters that will be optimized.
+- `method` (str): A string indicating the optimization algorithm to be used ('LBFGS' or 'Adam').
+
+#### Returns:
+- `torch.Tensor`: A 2-dimensional tensor containing the optimized results. The first column holds the time-evolution values from `sweep_range`, the second column stores - the optimized parameter θ_x, and the third column contains the optimized parameter ϕ_z.
+
+#### Data structure
+The function generates a 2-dimensional torch tensor Data to store the results:
+- `Data[:,0]`: stores the Phi values (time of time-evolution) obtained from `sweep_range`.
+- `Data[:,1]`: stores the optimized value of the cost function (e.g., negative Classical Fisher Information (CFI)).
+- `Data[:,2:]`: stores the optimized parameters of the quantum gate (`theta_x` and `phi_z`).
+
+#### Execution process
+1. The function computes a tensor Phi to hold the range of phase values.
+
+2. A zero-initialized tensor Data is prepared to store the optimization results. 
+
+3. For each value of ϕ in Phi, the function performs the optimization using the provided method, updating the global variable `Phi_global`.
+
+4. The optimized parameters and corresponding cost function values are recorded in Data.
+
+### `select_optimizer`
+
+#### Purpose
+The select_optimizer function selects and configures a PyTorch optimizer based on the specified method ('LBFGS' or 'Adam').
+
+#### Arguments
+- `method`: 
+- `parameters_in`:
+
+#### Available Optimizers
+- LBFGS: This is an optimization algorithm in the family of quasi-Newton methods. It approximates the Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm using a limited amount of computer memory. 
+
+https://pytorch.org/docs/stable/generated/torch.optim.LBFGS.html
+
+- Adam: A stochastic optimization method that computes adaptive learning rates for each parameter.
+
+https://pytorch.org/docs/stable/generated/torch.optim.Adam.html
