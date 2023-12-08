@@ -8,9 +8,7 @@ The function Dephase_factor(tau) is designed to calculate the dephasing factor
 
 
 ### Time-evolution and Dephasing Density Matrix
-$$
-Let, e^{-t/T_2} = e^{-\tau}
-$$
+$$Let, e^{-t/T_2} = e^{-\tau}$$
 Here, t is the actual time, and T2 is the dephasing time constant. The term τ represents the normalized dephasing time.
 
 The effect of dephasing on a single qubit in the computational basis, considering a phase ϕ, can be described by the following density matrix:
