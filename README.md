@@ -100,13 +100,27 @@ $$K = \begin{bmatrix}
 $$\rho_{\text{ps}} = \frac{K \rho K^\dagger}{\text{Tr}{[K \rho K^\dagger]}}$$
 
 #### [2-qubit]
-$$ K =  \begin{bmatrix}
-\sqrt{1-\gamma_{ps}} & 0 \\
-0 & 1 
-\end{bmatrix}  $$
-
 $$\rho_{ps} = \frac{(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})}{Tr[(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})]}$$
 
+#### [3-qubit]
+$$\rho_{ps} = \frac{(K \otimes(K \otimes K)) \rho (K \otimes(K \otimes K))^{\dagger}} % (K^{\dagger} \otimes I ^{\dagger})}
+
+{Tr[(K \otimes(K \otimes K)) \rho (K \otimes(K \otimes K))^{\dagger}]}
+$$
+#### [4-qubit]
+$$\rho_{ps} = \frac
+{(K \otimes K_3) \rho (K \otimes K_3)^{\dagger}}
+{Tr[(K \otimes K_3) \rho (K \otimes K_3)^{\dagger}]}$$
+
+$$ where, K = \begin{bmatrix}
+\sqrt{1-\gamma_{ps}} & 0 \\
+0 & 1 
+\end{bmatrix}  
+, K_2 =  (K \otimes K)
+\
+and
+\
+K_3 =  (K \otimes K_2)$$
 
 ### Cost-function to Maximize
 The function cost_function(paras) is specifically designed to compute the Classical Fisher Information (CFI) with respect to a set of parameters. The CFI is an important quantity in quantum parameter estimation and is given by the formula:
