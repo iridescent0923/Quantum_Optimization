@@ -10,6 +10,8 @@ To begin, we configure PennyLane to use a specific quantum device. In this case,
 - `wires=1`: Defines the number of qubits
 
 ### Hamiltonian Definition
+
+#### [1-qubit]
 $$H = -0.5 \sigma_z$$
 
 $$where,
@@ -18,6 +20,26 @@ $$where,
 0 & -1
 \end{pmatrix}$$
 
+#### [2-qubit]
+#### Entangler Hamiltonian
+$$H = -0.5 \, Z_0 \otimes Z_1$$
+
+$$where,
+Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+
+#### Phase Accumulator Hamiltonian
+$$H_{1} = -0.5 \cdot Z_0 - 0.5 \cdot Z_1 $$
+
+$$= -0.5 \cdot (Z \otimes I) - 0.5 \cdot (I \otimes Z)$$
+
+$$
+
+$$
+
+$$where,
+Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+#### [3-qubit]
+#### [4-qubit]
 ##### Parameters:
 - `coeffs`: A list of coefficients for each term in the Hamiltonian.
 
