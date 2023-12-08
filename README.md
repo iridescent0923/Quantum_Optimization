@@ -96,18 +96,16 @@ $$K = \begin{bmatrix}
 : The post-selection process is modeled by applying the Kraus operator `K` to the system's density matrix `ρ`, and normalizing the result by the trace of the numerator to obtain the post-selected density matrix 
 ρ_ps
 
-####[1-qubit]
+#### [1-qubit]
 $$\rho_{\text{ps}} = \frac{K \rho K^\dagger}{\text{Tr}{[K \rho K^\dagger]}}$$
 
-####[2-qubit]
+#### [2-qubit]
 $$ K =  \begin{bmatrix}
 \sqrt{1-\gamma_{ps}} & 0 \\
 0 & 1 
 \end{bmatrix}  $$
 
-$$\rho_{ps} = 
-\frac{(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})}
-{Tr[(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})]}$$
+$$\rho_{ps} = \frac{(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})}{Tr[(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})]}$$
 
 
 ### Cost-function to Maximize
