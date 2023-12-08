@@ -58,7 +58,7 @@ $$where, Z = \begin{pmatrix}
 
 #### [4-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \cdot(Z_0 \otimes Z_1 \otimes I_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes Z_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes I_{2} \otimes Z_3 + I_{0} \otimes Z_1 \otimes Z_{2} \otimes I_{3} + I_{0} \otimes Z_1 \otimes I_{2} \otimes Z_ + I_{0} \otimes I_1 \otimes Z_{2} \otimes Z_3)$$
+$$H = -0.5 \cdot(Z_0 \otimes Z_1 \otimes I_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes Z_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes I_{2} \otimes Z_3 + \, I_{0} \otimes Z_1 \otimes Z_{2} \otimes I_{3} + I_{0} \otimes Z_1 \otimes I_{2} \otimes Z_ + I_{0} \otimes I_1 \otimes Z_{2} \otimes Z_3)$$
 
 $$where, Z = \begin{pmatrix} 
 1 & 0 \\ 
