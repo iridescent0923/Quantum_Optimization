@@ -22,22 +22,22 @@ $$where,
 
 #### [2-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \, Z_0 \otimes Z_1$$
+$$H = -0.5 \cdot Z_0 \otimes Z_1$$
 
-$$where,
-Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+$$where,Z = \begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
 $$H_{1} = -0.5 \cdot Z_0 - 0.5 \cdot Z_1 $$
 
 $$= -0.5 \cdot (Z \otimes I) - 0.5 \cdot (I \otimes Z)$$
 
-$$
-
-$$
 
 $$where,
-Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+Z = \begin{pmatrix} 
+1 & 0 \\ 
+0 & -1 \end{pmatrix}$$
 #### [3-qubit]
 #### [4-qubit]
 ##### Parameters:
