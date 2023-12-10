@@ -12,7 +12,7 @@ To begin, we configure PennyLane to use a specific quantum device. In this case,
 ### Hamiltonian Definition
 
 #### [1-qubit]
-$$H = -0.5 \sigma_z$$
+$$H = -0.5 \cdot \sigma_z$$
 
 $$where,
 \sigma_z = \begin{pmatrix}
