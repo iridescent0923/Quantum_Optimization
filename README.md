@@ -7,7 +7,7 @@ To begin, we configure PennyLane to use a specific quantum device. In this case,
 ##### Parameters:
 - `default.mixed`: The 'default.mixed' device is capable of simulating quantum states that are mixed
 
-- `wires=1`: Defines the number of qubits
+- `wires=n`: Defines the number of n_qubits
 
 ### Hamiltonian Definition
 
