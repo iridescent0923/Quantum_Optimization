@@ -50,7 +50,7 @@ Z = \begin{pmatrix}
 0 & -1 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
-$$H_{1} = -0.5 \cdot Z_0 - 0.5 \cdot Z_1 - 0.5 \cdot Z_2 $$
+$$H_{1} = -0.5 \cdot (Z_0 + Z_1 + Z_2)$$
 
 $$where, Z = \begin{pmatrix} 
 1 & 0 \\
