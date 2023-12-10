@@ -41,8 +41,8 @@ Z = \begin{pmatrix}
 
 #### [3-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \, Z_0 \otimes Z_1 \otimes I_{2} 
--0.5 \, I_{0} \otimes Z_1 \otimes Z_2$$
+$$H = -0.5 \cdot Z_0 \otimes Z_1 \otimes I_{2} 
+-0.5 \cdot I_{0} \otimes Z_1 \otimes Z_2$$
 
 $$where,
 Z = \begin{pmatrix} 
