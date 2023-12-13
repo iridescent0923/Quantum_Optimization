@@ -80,8 +80,11 @@ $$where, Z = \begin{pmatrix}
 ##### Parameters:
 - `coeffs`: A list of coefficients for each term in the Hamiltonian.
 
-- `observables`: A list of quantum observables that constitute the Hamiltonian. 
+- `observables`: A list of quantum observables that constitute the Hamiltonian.
 
+#### Reference
+https://docs.pennylane.ai/en/stable/code/api/pennylane.ApproxTimeEvolution.html
+https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliRot.html
 
 ### Dephasing Factor Calculation
 The function Dephase_factor(tau) is designed to calculate the dephasing factor
