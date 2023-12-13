@@ -86,6 +86,7 @@ $$where, Z = \begin{pmatrix}
 https://docs.pennylane.ai/en/stable/code/api/pennylane.ApproxTimeEvolution.html
 https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliRot.html
 
+
 ### Dephasing Factor Calculation
 The function Dephase_factor(tau) is designed to calculate the dephasing factor
 
