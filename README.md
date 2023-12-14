@@ -31,7 +31,7 @@ $$where,Z = \begin{pmatrix}
 #### Phase Accumulator Hamiltonian
 $$H_{1} = 0.5 \cdot (Z_0 + Z_1) $$
 
-$$= 0.5 \cdot (Z \otimes I) + 0.5 \cdot (I \otimes Z)$$
+$$= 0.5 \cdot (Z \otimes I + I \otimes Z)$$
 
 
 $$where,
@@ -41,8 +41,8 @@ Z = \begin{pmatrix}
 
 #### [3-qubit]
 #### Entangler Hamiltonian
-$$H = 0.5 \cdot Z_0 \otimes Z_1 \otimes I_{2} 
-0.5 \cdot I_{0} \otimes Z_1 \otimes Z_2$$
+$$H = 0.5 \cdot (Z_0 \otimes Z_1 \otimes I_{2} 
++ I_{0} \otimes Z_1 \otimes Z_2)$$
 
 $$where,
 Z = \begin{pmatrix} 
