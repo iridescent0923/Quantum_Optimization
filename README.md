@@ -137,6 +137,8 @@ https://docs.pennylane.ai/en/stable/code/api/pennylane.PhaseDamping.html
 - `interface='torch'`: This setting ensures that the QNode is compatible with PyTorch, allowing for automatic differentiation.
 - `diff_method='backprop'`: Specifies that backpropagation is used for computing gradients within the PyTorch framework.
 
+https://docs.pennylane.ai/en/stable/introduction/interfaces/torch.html
+
 
 ### Post-selection for Single-qubit Circuit 
 The `Post_selection(phi)` function encapsulates the process of post-selection within a quantum circuit.
