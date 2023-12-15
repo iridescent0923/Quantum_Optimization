@@ -30,8 +30,7 @@ def select_optimizer(method, parameters_in):
                 tolerance_grad=1e-12,  # Termination tolerance on the gradient norm
                 tolerance_change=1e-12,# Termination tolerance on the function value/parameter changes
                 history_size=200,      # Update history size
-                line_search_fn='strong_wolfe'  # Using Strong Wolfe line search
-
+                line_search_fn='strong_wolfe'
         )
         return opt
     

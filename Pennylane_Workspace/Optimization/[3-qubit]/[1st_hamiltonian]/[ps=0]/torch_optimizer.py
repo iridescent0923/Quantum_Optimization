@@ -24,12 +24,13 @@ def select_optimizer(method, parameters_in):
     if method == 'LBFGS':
         opt = torch.optim.LBFGS(
                 [parameters_in], 
-                lr=0.01,              # Learning rate
-                max_iter=20,          # Maximum number of iterations per optimization step
+                lr=5e-3,              # Learning rate
+                max_iter=80,          # Maximum number of iterations per optimization step
                 max_eval=None,        # Maximum number of function evaluations per optimization step
-                tolerance_grad=1e-7,  # Termination tolerance on the gradient norm
-                tolerance_change=1e-9,# Termination tolerance on the function value/parameter changes
-                history_size=100      # Update history size
+                tolerance_grad=1e-12,  # Termination tolerance on the gradient norm
+                tolerance_change=1e-12,# Termination tolerance on the function value/parameter changes
+                history_size=200,      # Update history size
+                line_search_fn='strong_wolfe'
         )
         return opt
     
