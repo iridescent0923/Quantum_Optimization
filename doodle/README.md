@@ -9,29 +9,32 @@ To begin, we configure PennyLane to use a specific quantum device. In this case,
 
 - `wires=n`: Defines the number of n_qubits
 
+https://docs.pennylane.ai/en/stable/code/api/pennylane.device.html
+
+
 ### Hamiltonian Definition
 
 #### [1-qubit]
-$$H = -0.5 \cdot \sigma_z$$
+$$H = 0.5 \cdot \sigma_z$$
 
 $$where,
 \sigma_z = \begin{pmatrix}
 1 & 0 \\
-0 & -1
+0 & 1
 \end{pmatrix}$$
 
 #### [2-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \cdot Z_0 \otimes Z_1$$
+$$H = 0.5 \cdot Z_0 \otimes Z_1$$
 
 $$where,Z = \begin{pmatrix} 
 1 & 0 \\ 
 0 & -1 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
-$$H_{1} = -0.5 \cdot (Z_0 + Z_1) $$
+$$H_{1} = 0.5 \cdot (Z_0 + Z_1) $$
 
-$$= -0.5 \cdot (Z \otimes I) - 0.5 \cdot (I \otimes Z)$$
+$$= 0.5 \cdot (Z \otimes I + I \otimes Z)$$
 
 
 $$where,
@@ -41,8 +44,7 @@ Z = \begin{pmatrix}
 
 #### [3-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \cdot Z_0 \otimes Z_1 \otimes I_{2} 
--0.5 \cdot I_{0} \otimes Z_1 \otimes Z_2$$
+$$H = 0.5 \cdot (Z_0 \otimes Z_1 \otimes I_{2} + I_{0} \otimes Z_1 \otimes Z_2 + Z_{0} \otimes I_1 \otimes Z_2)$$
 
 $$where,
 Z = \begin{pmatrix} 
@@ -50,7 +52,7 @@ Z = \begin{pmatrix}
 0 & -1 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
-$$H_{1} = -0.5 \cdot (Z_0 + Z_1 + Z_2)$$
+$$H_{1} = 0.5 \cdot (Z_0 + Z_1 + Z_2)$$
 
 $$where, Z = \begin{pmatrix} 
 1 & 0 \\
@@ -58,7 +60,7 @@ $$where, Z = \begin{pmatrix}
 
 #### [4-qubit]
 #### Entangler Hamiltonian
-$$H = -0.5 \cdot(Z_0 \otimes Z_1 \otimes I_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes Z_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes I_{2} \otimes Z_3 + $$
+$$H = 0.5 \cdot(Z_0 \otimes Z_1 \otimes I_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes Z_{2} \otimes I_3 + Z_{0} \otimes I_1 \otimes I_{2} \otimes Z_3 + $$
 
 $$I_{0} \otimes Z_1 \otimes Z_{2} \otimes I_{3} + I_{0} \otimes Z_1 \otimes I_{2} \otimes Z_{3} + I_{0} \otimes I_1 \otimes Z_{2} \otimes Z_3)$$
 
@@ -68,7 +70,7 @@ $$where, Z = \begin{pmatrix}
 \end{pmatrix}$$
 
 #### Phase Accumulator Hamiltonian
-$$H_{1} = -0.5 \cdot (
+$$H_{1} = 0.5 \cdot (
     Z_0 + Z_1 + Z_2 + Z_3
 ) $$
 
@@ -80,7 +82,11 @@ $$where, Z = \begin{pmatrix}
 ##### Parameters:
 - `coeffs`: A list of coefficients for each term in the Hamiltonian.
 
-- `observables`: A list of quantum observables that constitute the Hamiltonian. 
+- `observables`: A list of quantum observables that constitute the Hamiltonian.
+
+#### Reference
+https://docs.pennylane.ai/en/stable/code/api/pennylane.ApproxTimeEvolution.html
+https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliRot.html
 
 
 ### Dephasing Factor Calculation
@@ -134,6 +140,8 @@ https://docs.pennylane.ai/en/stable/code/api/pennylane.PhaseDamping.html
 - `interface='torch'`: This setting ensures that the QNode is compatible with PyTorch, allowing for automatic differentiation.
 - `diff_method='backprop'`: Specifies that backpropagation is used for computing gradients within the PyTorch framework.
 
+https://docs.pennylane.ai/en/stable/introduction/interfaces/torch.html
+
 
 ### Post-selection for Single-qubit Circuit 
 The `Post_selection(phi)` function encapsulates the process of post-selection within a quantum circuit.
@@ -159,7 +167,7 @@ $$K = \begin{bmatrix}
 $$\rho_{\text{ps}} = \frac{K \rho K^\dagger}{\text{Tr}{[K \rho K^\dagger]}}$$
 
 #### [2-qubit]
-$$\rho_{ps} = \frac{(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})}{Tr[(K \otimes I) \rho (K^{\dagger} \otimes I ^{\dagger})]}$$
+$$\rho_{ps} = \frac{(K \otimes I) \rho (K \otimes I)^{\dagger}}{Tr[(K \otimes I) \rho (K \otimes I)^{\dagger}]}$$
 
 #### [3-qubit]
 $$\rho_{ps} = 
@@ -181,6 +189,7 @@ $$ where, K = \begin{bmatrix}
 The function cost_function(paras) is specifically designed to compute the Classical Fisher Information (CFI) with respect to a set of parameters. The CFI is an important quantity in quantum parameter estimation and is given by the formula:
 
 $$\text{CFI}(\theta) = \sum_{x} \frac{1}{P(x|\theta)} \left( \frac{\partial P(x|\theta)}{\partial \theta} \right)^2$$
+https://arxiv.org/abs/2103.15191
 
 #### `qml.qinfo.classical_fisher`
 The function `qml.qinfo.classical_fisher` within the PennyLane library computes the CFI for the supplied parameters. By invoking this function with a quantum circuit's parameters, it yields a matrix whose size is proportional to the number of parameters involved. However, in our specific application, we focus on the time-evolution parameter `phi_global` instead of local variables. This strategic choice is driven by the goal to assess the CFI with respect to time-evolution only.
